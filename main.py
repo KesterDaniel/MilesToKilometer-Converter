@@ -8,7 +8,7 @@ window.config(padx=200, pady=75)
 
 
 def converter():
-    mile_value = miles_input.get()
+    mile_value = float(miles_input.get())
     to_km = round(int(mile_value) * 1.609, 2)
     km_value.config(text=to_km)
 
