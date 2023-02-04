@@ -6,6 +6,13 @@ window.minsize(width=400, height=150)
 window.title("Miles to Kilometer Converter")
 window.config(padx=200, pady=75)
 
+
+def converter():
+    mile_value = miles_input.get()
+    to_km = round(int(mile_value) * 1.609, 2)
+    km_value.config(text=to_km)
+
+
 miles_input = Entry(width=10)
 miles_input.insert(END, string=0)
 miles_input.grid(row=0, column=1)
@@ -22,7 +29,7 @@ km_value.grid(row=1, column=1)
 km_label2 = Label(text="Km", font=FONT)
 km_label2.grid(row=1, column=2)
 
-calc_btn = Button(text="Calculate", font=FONT)
+calc_btn = Button(text="Calculate", font=FONT, command=converter)
 calc_btn.grid(row=2, column=1)
 
 
